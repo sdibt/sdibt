@@ -79,7 +79,6 @@ public class ZTreningSubmitter extends Submitter {
 		 String relativePath = (String) ApplicationContainer.sc.getAttribute("ZTrening");
          String basePath = ApplicationContainer.sc.getRealPath(relativePath);
 		File file = new File(basePath + "/"+idx + "");
-		//System.out.println(file);
 		File dir = new File(basePath + "/" );
 		if (!dir.exists())
 			dir.mkdirs();
