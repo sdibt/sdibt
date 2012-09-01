@@ -76,7 +76,14 @@ public class ZTreningSubmitter extends Submitter {
 	}
 	
 	private void submit() throws Exception{
-		File file = new File(idx + "");
+		 String relativePath = (String) ApplicationContainer.sc.getAttribute("ZTrening");
+         String basePath = ApplicationContainer.sc.getRealPath(relativePath);
+		File file = new File(basePath + "/"+idx + "");
+		//System.out.println(file);
+		File dir = new File(basePath + "/" );
+		if (!dir.exists())
+			dir.mkdirs();
+
 		try{
 			FileWriter filewriter = new FileWriter(file, false);
 			filewriter.write(submission.getSource());
