@@ -110,6 +110,7 @@ public class POJSubmitter extends Submitter {
 		postMethod.addParameter("problem_id", problem.getOriginProb());
 		postMethod.addParameter("source", submission.getSource());
 		postMethod.addParameter("submit", "Submit");
+		postMethod.addParameter("encoded", "0");
 		postMethod.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler());
 		httpClient.getParams().setContentCharset("UTF-8"); 
 
